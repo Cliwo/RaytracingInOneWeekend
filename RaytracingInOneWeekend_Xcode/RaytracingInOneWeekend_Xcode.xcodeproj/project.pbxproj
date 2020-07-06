@@ -32,6 +32,11 @@
 		6442818D247FBA970078B55C /* color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = color.h; path = ../../RaytracingInOneWeekend/color.h; sourceTree = "<group>"; };
 		6442818E247FBA970078B55C /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3.h; path = ../../RaytracingInOneWeekend/vec3.h; sourceTree = "<group>"; };
 		6442818F247FBA970078B55C /* ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ray.h; path = ../../RaytracingInOneWeekend/ray.h; sourceTree = "<group>"; };
+		646E9D6224B3902B00462D07 /* rtweekend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rtweekend.h; path = ../../RaytracingInOneWeekend/rtweekend.h; sourceTree = "<group>"; };
+		646E9D6324B3902B00462D07 /* sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sphere.h; path = ../../RaytracingInOneWeekend/sphere.h; sourceTree = "<group>"; };
+		646E9D6424B3902B00462D07 /* hittable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hittable.h; path = ../../RaytracingInOneWeekend/hittable.h; sourceTree = "<group>"; };
+		646E9D6524B3902B00462D07 /* hittable_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hittable_list.h; path = ../../RaytracingInOneWeekend/hittable_list.h; sourceTree = "<group>"; };
+		646E9D6624B390AC00462D07 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,10 @@
 		64428181247FBA800078B55C /* RaytracingInOneWeekend_Xcode */ = {
 			isa = PBXGroup;
 			children = (
+				646E9D6524B3902B00462D07 /* hittable_list.h */,
+				646E9D6424B3902B00462D07 /* hittable.h */,
+				646E9D6224B3902B00462D07 /* rtweekend.h */,
+				646E9D6324B3902B00462D07 /* sphere.h */,
 				6442818D247FBA970078B55C /* color.h */,
 				6442818C247FBA970078B55C /* main.cpp */,
 				6442818F247FBA970078B55C /* ray.h */,
@@ -71,6 +80,7 @@
 				6442818B247FBA970078B55C /* RaytracingInOneWeekend.vcxproj.filters */,
 				64428189247FBA970078B55C /* vec3.cpp */,
 				6442818E247FBA970078B55C /* vec3.h */,
+				646E9D6624B390AC00462D07 /* camera.h */,
 			);
 			path = RaytracingInOneWeekend_Xcode;
 			sourceTree = "<group>";
