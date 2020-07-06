@@ -37,6 +37,7 @@
 		646E9D6424B3902B00462D07 /* hittable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hittable.h; path = ../../RaytracingInOneWeekend/hittable.h; sourceTree = "<group>"; };
 		646E9D6524B3902B00462D07 /* hittable_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hittable_list.h; path = ../../RaytracingInOneWeekend/hittable_list.h; sourceTree = "<group>"; };
 		646E9D6624B390AC00462D07 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		646E9D6724B3AC2A00462D07 /* material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = material.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 				64428189247FBA970078B55C /* vec3.cpp */,
 				6442818E247FBA970078B55C /* vec3.h */,
 				646E9D6624B390AC00462D07 /* camera.h */,
+				646E9D6724B3AC2A00462D07 /* material.h */,
 			);
 			path = RaytracingInOneWeekend_Xcode;
 			sourceTree = "<group>";
