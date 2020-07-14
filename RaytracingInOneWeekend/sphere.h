@@ -25,7 +25,7 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
 
     if (discriminant > 0) {
         auto root = sqrt(discriminant);
-        auto temp = (-half_b - root) / a; //t_max 와 t_min이라는 조건을 따로 주었으므로 양근에서 모두 체크
+        auto temp = (-half_b - root) / a; 
         if (temp < t_max && temp > t_min) {
             rec.t = temp;
             rec.p = r.at(rec.t);
