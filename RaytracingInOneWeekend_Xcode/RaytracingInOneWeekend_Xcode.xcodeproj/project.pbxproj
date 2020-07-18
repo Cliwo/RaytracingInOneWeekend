@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6408474124C3630900295119 /* moving_sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = moving_sphere.h; sourceTree = "<group>"; };
 		6442817F247FBA800078B55C /* RaytracingInOneWeekend_Xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RaytracingInOneWeekend_Xcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		64428189247FBA970078B55C /* vec3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vec3.cpp; path = ../../RaytracingInOneWeekend/vec3.cpp; sourceTree = "<group>"; };
 		6442818A247FBA970078B55C /* RaytracingInOneWeekend.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = RaytracingInOneWeekend.vcxproj; path = ../../RaytracingInOneWeekend/RaytracingInOneWeekend.vcxproj; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 				6442818E247FBA970078B55C /* vec3.h */,
 				646E9D6624B390AC00462D07 /* camera.h */,
 				646E9D6724B3AC2A00462D07 /* material.h */,
+				6408474124C3630900295119 /* moving_sphere.h */,
 			);
 			path = RaytracingInOneWeekend_Xcode;
 			sourceTree = "<group>";
