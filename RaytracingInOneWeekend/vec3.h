@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef vec3_h
+#define vec3_h
+
 #include "rtweekend.h"
 
 #include <cmath>
@@ -150,3 +153,5 @@ inline vec3 refract(const vec3& uv, const vec3& n, double etai_over_etat) {
     vec3 r_out_perp = -sqrt(1.0 - r_out_parallel.length_squared()) * n;
     return r_out_parallel + r_out_perp;
 }
+
+#endif

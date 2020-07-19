@@ -1,4 +1,6 @@
 #pragma once
+#ifndef ray_h
+#define ray_h
 
 #include "vec3.h"
 
@@ -21,3 +23,5 @@ public:
 	vec3 dir;
     double tm; //when this ray is 'alive'
 };
+
+#endif

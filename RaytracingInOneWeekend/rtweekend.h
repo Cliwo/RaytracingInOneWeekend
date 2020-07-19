@@ -1,4 +1,7 @@
 #pragma once
+#ifndef rtweekend_h
+#define rtweekend_h
+
 #include <cmath>
 #include <cstdlib>
 #include <limits>
@@ -37,3 +40,4 @@ inline double clamp(double x, double min, double max) {
 }
 
 // Common Headers
+#endif 

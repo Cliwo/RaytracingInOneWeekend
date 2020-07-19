@@ -7,7 +7,8 @@
 //
 
 #pragma once
-
+#ifndef camera_h
+#define camera_h
 #include "rtweekend.h"
 
 class camera {
@@ -60,3 +61,4 @@ class camera {
         double lens_radius;
         double time0, time1; // shutter open/close times.
 };
+#endif

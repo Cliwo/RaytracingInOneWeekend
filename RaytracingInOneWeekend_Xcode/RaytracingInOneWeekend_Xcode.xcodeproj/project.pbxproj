@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64428190247FBA970078B55C /* vec3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64428189247FBA970078B55C /* vec3.cpp */; };
 		64428191247FBA970078B55C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6442818C247FBA970078B55C /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -25,8 +24,8 @@
 
 /* Begin PBXFileReference section */
 		6408474124C3630900295119 /* moving_sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = moving_sphere.h; sourceTree = "<group>"; };
+		6408474224C3F1D000295119 /* aabb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aabb.h; sourceTree = "<group>"; };
 		6442817F247FBA800078B55C /* RaytracingInOneWeekend_Xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RaytracingInOneWeekend_Xcode; sourceTree = BUILT_PRODUCTS_DIR; };
-		64428189247FBA970078B55C /* vec3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vec3.cpp; path = ../../RaytracingInOneWeekend/vec3.cpp; sourceTree = "<group>"; };
 		6442818A247FBA970078B55C /* RaytracingInOneWeekend.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = RaytracingInOneWeekend.vcxproj; path = ../../RaytracingInOneWeekend/RaytracingInOneWeekend.vcxproj; sourceTree = "<group>"; };
 		6442818B247FBA970078B55C /* RaytracingInOneWeekend.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = RaytracingInOneWeekend.vcxproj.filters; path = ../../RaytracingInOneWeekend/RaytracingInOneWeekend.vcxproj.filters; sourceTree = "<group>"; };
 		6442818C247FBA970078B55C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../RaytracingInOneWeekend/main.cpp; sourceTree = "<group>"; };
@@ -80,11 +79,11 @@
 				6442818F247FBA970078B55C /* ray.h */,
 				6442818A247FBA970078B55C /* RaytracingInOneWeekend.vcxproj */,
 				6442818B247FBA970078B55C /* RaytracingInOneWeekend.vcxproj.filters */,
-				64428189247FBA970078B55C /* vec3.cpp */,
 				6442818E247FBA970078B55C /* vec3.h */,
 				646E9D6624B390AC00462D07 /* camera.h */,
 				646E9D6724B3AC2A00462D07 /* material.h */,
 				6408474124C3630900295119 /* moving_sphere.h */,
+				6408474224C3F1D000295119 /* aabb.h */,
 			);
 			path = RaytracingInOneWeekend_Xcode;
 			sourceTree = "<group>";
@@ -147,7 +146,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64428191247FBA970078B55C /* main.cpp in Sources */,
-				64428190247FBA970078B55C /* vec3.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
