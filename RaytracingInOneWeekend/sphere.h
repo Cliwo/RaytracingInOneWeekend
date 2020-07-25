@@ -58,4 +58,11 @@ bool sphere::bounding_box(double t0, double t1, aabb& output_box) const {
     return true;
 }
 
+void get_sphere_uv(const vec3& p, double& u, double& v) {
+    auto phi = atan2(p.z(), p.x());
+    auto theta = asin(p.y());
+    u = 1-(phi + pi) / (2*pi);
+    v = (theta + pi/2) / pi;
+}
+
 #endif
