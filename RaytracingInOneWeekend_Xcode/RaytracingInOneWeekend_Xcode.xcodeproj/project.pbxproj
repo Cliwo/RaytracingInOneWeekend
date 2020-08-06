@@ -38,6 +38,8 @@
 		646E9D6524B3902B00462D07 /* hittable_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hittable_list.h; path = ../../RaytracingInOneWeekend/hittable_list.h; sourceTree = "<group>"; };
 		646E9D6624B390AC00462D07 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		646E9D6724B3AC2A00462D07 /* material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = material.h; sourceTree = "<group>"; };
+		64E9E03524C407DD00ADA8A6 /* bvh_node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bvh_node.h; sourceTree = "<group>"; };
+		64E9E03624C47ADB00ADA8A6 /* texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,8 @@
 				646E9D6724B3AC2A00462D07 /* material.h */,
 				6408474124C3630900295119 /* moving_sphere.h */,
 				6408474224C3F1D000295119 /* aabb.h */,
+				64E9E03524C407DD00ADA8A6 /* bvh_node.h */,
+				64E9E03624C47ADB00ADA8A6 /* texture.h */,
 			);
 			path = RaytracingInOneWeekend_Xcode;
 			sourceTree = "<group>";

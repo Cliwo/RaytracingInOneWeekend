@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include "rtweekend.h"
 #include "hittable.h"
 #include "hittable_list.h"
 #include "aabb.h"
@@ -38,7 +39,7 @@ public:
     shared_ptr<hittable> left;
     shared_ptr<hittable> right;
     aabb box;
-}
+};
 
 bool bvh_node::bounding_box(double t0, double t1, aabb& output_box) const {
     output_box = box;
@@ -99,7 +100,7 @@ inline bool box_compare(const shared_ptr<hittable> a, const shared_ptr<hittable>
     if (!a->bounding_box(0,0, box_a) || !b->bounding_box(0,0, box_b))
         std::cerr << "No bounding box in bvh_node constructor.\n";
 
-    return box_a.min().e[axis] < box_b.min().e[axis];
+    return box_a.min().elements[axis] < box_b.min().elements[axis];
 }
 
 

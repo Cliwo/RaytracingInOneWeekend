@@ -8,10 +8,12 @@
 #include "color.h"
 #include "material.h"
 #include "camera.h"
+#include "bvh_node.h"
 
 #include <iostream>
 
 hittable_list random_scene();
+hittable_list two_spheres();
 
 color ray_color(const ray& r, const hittable& world, int depth) {
 	hit_record rec;
@@ -34,31 +36,49 @@ color ray_color(const ray& r, const hittable& world, int depth) {
 
 
 int main() {
+    ///[Image Setup]
 	const auto aspect_ratio = 16.0 / 9.0;
-
 	const int image_width = 384;
-	const int image_height = static_cast<int>(image_width / aspect_ratio);
     const int samples_per_pixel = 100;
     const int max_depth = 50;
-
-	std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
-
-    auto world = random_scene();
-//    hittable_list world;
-//    world.add(make_shared<sphere>(point3(0,0,-1), 0.5, make_shared<lambertian>(color(.1, .2, .5))));
-//    world.add(make_shared<sphere>(point3(0,-100.5,-1), 100, make_shared<lambertian>(color(.8,.8,0.))));
-//    world.add(make_shared<sphere>(point3(1,0,-1), 0.5, make_shared<metal>(color(.8, .6, .2), 0.3)));
-//    world.add(make_shared<sphere>(point3(-1,0,-1), 0.5, make_shared<dielectric>(1.5)));
-//    world.add(make_shared<sphere>(point3(-1,0,-1), -0.45, make_shared<dielectric>(1.5)));
     
-    point3 lookfrom(13,2,3);
-    point3 lookat(0,0,0);
+    ///[World Setup]
+    hittable_list world;
+
+    point3 lookfrom;
+    point3 lookat;
+    auto vfov = 40.0;
+    auto aperture = 0.0;
+    
+    switch (0) {
+        case 1:
+            world = random_scene();
+            lookfrom = point3(13,2,3);
+            lookat = point3(0,0,0);
+            vfov = 20.0;
+            aperture = 0.1;
+            break;
+
+        default:
+        case 2:
+            world = two_spheres();
+            lookfrom = point3(13,2,3);
+            lookat = point3(0,0,0);
+            vfov = 20.0;
+            break;
+    }
+    auto bvh_world = bvh_node(world, 0.0, 1.0);
+    
+    ///[Camera]
     vec3 vup(0,1,0);
     auto dist_to_focus = 10.0;
-    auto aperture = 0.0;
-
-    camera cam(lookfrom, lookat, vup, 20, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
+    int image_height = static_cast<int>(image_width / aspect_ratio);
+    camera cam(lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
     
+    ///[Before Rendering]
+    std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
+    
+    ///[Rendering]
 	for (int j = image_height - 1; j >= 0; j--)
 	{
 		std::cerr << "\nScanlines remaining : " << j << ' ' << std::flush;
@@ -71,7 +91,7 @@ int main() {
                 auto v = double(j) / (image_height - 1);
 
                 ray r = cam.get_ray(u, v);
-                pixel_color += ray_color(r, world, max_depth);
+                pixel_color += ray_color(r, bvh_world, max_depth);
             }
 			write_color(std::cout, pixel_color, samples_per_pixel);
 		}
@@ -79,10 +99,21 @@ int main() {
 	std::cerr << "\nDone.\n";
 }
 
+hittable_list two_spheres() {
+    hittable_list objects;
+
+    auto checker = make_shared<checker_texture>(color(0.2, 0.3, 0.1), color(0.9, 0.9, 0.9));
+
+    objects.add(make_shared<sphere>(point3(0,-10, 0), 10, make_shared<lambertian>(checker)));
+    objects.add(make_shared<sphere>(point3(0, 10, 0), 10, make_shared<lambertian>(checker)));
+
+    return objects;
+}
+
 hittable_list random_scene() {
     hittable_list world;
 
-     auto checker = make_shared<checkter_texture>(color(0.2, 0.3, 0.1), color(0.9, 0.9, 0.9));
+     auto checker = make_shared<checker_texture>(color(0.2, 0.3, 0.1), color(0.9, 0.9, 0.9));
        world.add(make_shared<sphere>(point3(0,-1000,0), 1000, make_shared<lambertian>(checker)));
 
     for (int a = -11; a < 11; a++) {
