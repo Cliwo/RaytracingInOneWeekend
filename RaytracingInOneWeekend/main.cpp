@@ -14,6 +14,7 @@
 
 hittable_list random_scene();
 hittable_list two_spheres();
+hittable_list two_perlin_spheres();
 
 color ray_color(const ray& r, const hittable& world, int depth) {
 	hit_record rec;
@@ -59,9 +60,15 @@ int main() {
             aperture = 0.1;
             break;
 
-        default:
         case 2:
             world = two_spheres();
+            lookfrom = point3(13,2,3);
+            lookat = point3(0,0,0);
+            vfov = 20.0;
+            break;
+        default:
+        case 3:
+            world = two_perlin_spheres();
             lookfrom = point3(13,2,3);
             lookat = point3(0,0,0);
             vfov = 20.0;
@@ -97,6 +104,16 @@ int main() {
 		}
 	}
 	std::cerr << "\nDone.\n";
+}
+
+hittable_list two_perlin_spheres() {
+    hittable_list objects;
+
+    auto pertext = make_shared<noise_texture>();
+    objects.add(make_shared<sphere>(point3(0,-1000,0), 1000, make_shared<lambertian>(pertext)));
+    objects.add(make_shared<sphere>(point3(0, 2, 0), 2, make_shared<lambertian>(pertext)));
+
+    return objects;
 }
 
 hittable_list two_spheres() {

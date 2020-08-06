@@ -32,6 +32,7 @@
 		6442818D247FBA970078B55C /* color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = color.h; path = ../../RaytracingInOneWeekend/color.h; sourceTree = "<group>"; };
 		6442818E247FBA970078B55C /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3.h; path = ../../RaytracingInOneWeekend/vec3.h; sourceTree = "<group>"; };
 		6442818F247FBA970078B55C /* ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ray.h; path = ../../RaytracingInOneWeekend/ray.h; sourceTree = "<group>"; };
+		6443EDA024DC1592008B305A /* perlin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = perlin.h; sourceTree = "<group>"; };
 		646E9D6224B3902B00462D07 /* rtweekend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rtweekend.h; path = ../../RaytracingInOneWeekend/rtweekend.h; sourceTree = "<group>"; };
 		646E9D6324B3902B00462D07 /* sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sphere.h; path = ../../RaytracingInOneWeekend/sphere.h; sourceTree = "<group>"; };
 		646E9D6424B3902B00462D07 /* hittable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hittable.h; path = ../../RaytracingInOneWeekend/hittable.h; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 				6408474224C3F1D000295119 /* aabb.h */,
 				64E9E03524C407DD00ADA8A6 /* bvh_node.h */,
 				64E9E03624C47ADB00ADA8A6 /* texture.h */,
+				6443EDA024DC1592008B305A /* perlin.h */,
 			);
 			path = RaytracingInOneWeekend_Xcode;
 			sourceTree = "<group>";
