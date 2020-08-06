@@ -11,6 +11,18 @@
 
 #include "rtweekend.h"
 
+inline double trilinear_interp(double c[2][2][2], double u, double v, double w) {
+    auto accum = 0.0;
+    for(int i = 0 ; i < 2; i++)
+        for(int j = 0 ; j < 2; j++)
+            for(int k = 0 ; k < 2; k++)
+                accum += (i*u + (1-i)*(1-u)) *
+                        (j*v + (1-j)*(1-v)) *
+                (k*w + (1-k)*(1-w)) * c[i][j][k];
+    
+    return accum;
+}
+
 class perlin {
 public:
     perlin(){
@@ -35,14 +47,22 @@ public:
         auto u = p.x() - floor(p.x());
         auto v = p.y() - floor(p.y());
         auto w = p.z() - floor(p.z());
+        
+        int i = floor(p.x());
+        int j = floor(p.y());
+        int k = floor(p.z());
+        double c[2][2][2];
+        
+        for (int di=0; di < 2; di++)
+            for (int dj=0; dj < 2; dj++)
+                for (int dk=0; dk < 2; dk++)
+                    c[di][dj][dk] = ranfloat[
+                        perm_x[(i+di) & 255] ^
+                        perm_y[(j+dj) & 255] ^
+                        perm_z[(k+dk) & 255]
+                                             ];
 
-        auto i = static_cast<int>(4*p.x()) & 255;
-        //255면 1byte, &를 하게되면 255초과의 숫자는 255로 고정된다. (엥 이러면 uniform 한 random이 아닌거 같은데)
-        //255 is 1byte. after & is done, one that is bigger thann 255 goes to 255. (? In this case this random is not uniform)
-        auto j = static_cast<int>(4*p.y()) & 255;
-        auto k = static_cast<int>(4*p.z()) & 255;
-
-        return ranfloat[perm_x[i] ^ perm_y[j] ^ perm_z[k]];
+        return trilinear_interp(c, u, v, w);
     }
     
 private:
