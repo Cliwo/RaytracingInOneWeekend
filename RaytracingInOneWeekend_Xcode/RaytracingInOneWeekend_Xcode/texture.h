@@ -56,11 +56,13 @@ public:
 class noise_texture : public texture {
 public:
     noise_texture() {}
+    noise_texture(double sc) : scale(sc) {}
     virtual color value(double u, double v, const vec3& p) const {
-        return color(1,1,1) * noise.noise(p);
+        return color(1,1,1) * 0.5 * (1.0 + noise.noise(scale * p));
     }
 public:
     perlin noise;
+    double scale;
 };
 
 #endif /* texture_h */
