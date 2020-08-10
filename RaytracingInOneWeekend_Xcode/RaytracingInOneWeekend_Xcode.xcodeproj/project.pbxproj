@@ -40,6 +40,7 @@
 		646E9D6624B390AC00462D07 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		646E9D6724B3AC2A00462D07 /* material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = material.h; sourceTree = "<group>"; };
 		64A28D8924E156B200732D96 /* rtw_stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rtw_stb_image.h; sourceTree = "<group>"; };
+		64A28D8A24E15BCB00732D96 /* earthmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = earthmap.jpg; path = ../../earthmap.jpg; sourceTree = "<group>"; };
 		64E9E03524C407DD00ADA8A6 /* bvh_node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bvh_node.h; sourceTree = "<group>"; };
 		64E9E03624C47ADB00ADA8A6 /* texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +75,7 @@
 		64428181247FBA800078B55C /* RaytracingInOneWeekend_Xcode */ = {
 			isa = PBXGroup;
 			children = (
+				64A28D8A24E15BCB00732D96 /* earthmap.jpg */,
 				646E9D6524B3902B00462D07 /* hittable_list.h */,
 				646E9D6424B3902B00462D07 /* hittable.h */,
 				646E9D6224B3902B00462D07 /* rtweekend.h */,

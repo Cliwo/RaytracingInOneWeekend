@@ -10,6 +10,9 @@
 #define texture_h
 
 #include "rtweekend.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+//https://stackoverflow.com/questions/24088002/stb-image-h-in-visual-studio-unresolved-external-symbol
 #include "rtw_stb_image.h"
 #include "perlin.h"
 
@@ -107,7 +110,8 @@ public:
         const auto color_scale = 1.0 / 255.0;
         auto pixel = data + j*bytes_per_scanline + i*bytes_per_pixel;
         
-        return color(color_scale * pixel[0], color_scale*pixel[1], color_scale*pixel[2]);
+        color val = color(color_scale * pixel[0], color_scale * pixel[1], color_scale * pixel[2]);
+        return val;
     }
 private:
     unsigned char * data;
